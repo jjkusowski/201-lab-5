@@ -1,6 +1,7 @@
 'use strict';
 
 /////////////////////////////////////
+console.log('Problem 1');
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and concatenates a message using the arguments passed into the function:
 
@@ -22,6 +23,7 @@ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
+console.log('\n\nProblem 2');
 /////////////////////////////////////
 /* Problem 2
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments passed into the function:
@@ -33,6 +35,7 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
   var theProduct = a * b;
+  console.log('the product is: ' + theProduct);
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
   return [theProduct, message];
 }
@@ -42,6 +45,8 @@ function multiply(a,b){ //eslint-disable-line
 testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+
+console.log('\n\nProblem 3');
 
 /////////////////////////////////////
 /* Problem 3
@@ -77,6 +82,8 @@ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
+console.log('\n\nProblem 4');
+
 /////////////////////////////////////
 /* Problem 4
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
@@ -108,6 +115,8 @@ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
+console.log('\n\nProblem 5');
+
 /////////////////////////////////////
 /* Problem 5
 Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
@@ -120,10 +129,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var partialProduct = multiply(testArray[0], testArray[1])[0];
+  console.log('partial product is: ' + partialProduct);
+  var totalProduct = multiply(partialProduct, testArray[2])[0];
+  console.log('total product is: ' + totalProduct);
+  var message = 'The numbers ' + testArray + ' have a product of ' + totalProduct + '.';
+  console.log(message);
 
+return[totalProduct, message]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
